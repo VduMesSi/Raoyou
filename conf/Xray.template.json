@@ -33,7 +33,7 @@
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                    "acceptProxyProtocol": false,
+                    "acceptProxyProtocol": true,
                     "path": "${Vless_Path}"
                 }
             }
