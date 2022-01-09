@@ -1,0 +1,28 @@
+apiVersion: apps/v1.0
+kind: Deployment
+metadata:
+  name: raoyou
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raoyou
+  template:
+    metadata:
+      labels:
+        app: raoyou
+    spec:
+      containers:
+      - image: okteto.dev/raoyou:latest
+        name: raoyou
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: ProxySite
+          value: "$ProxySite"
+        - name: Vless_UUID
+          value: "$Vless_UUID"
+        - name: Vless_Path
+          value: "$Vless_Path"
